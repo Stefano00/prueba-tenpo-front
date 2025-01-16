@@ -11,7 +11,7 @@ function TransactionsPage() {
   };
 
   const handleRefresh = () => {
-    setRefreshTrigger(Date.now()); // Cambia el valor para disparar el efecto en TransactionList
+    setRefreshTrigger(Date.now());
   };
 
   return (

@@ -4,7 +4,7 @@ import axios from 'axios';
 import TransactionForm from '../components/TransactionForm';
 
 function EditTransactionPage() {
-  const { id } = useParams(); // Leer el :id de la URL
+  const { id } = useParams();
   const navigate = useNavigate();
   const [transaction, setTransaction] = useState(null);
 
@@ -22,10 +22,9 @@ function EditTransactionPage() {
 
   const handleSaved = () => {
     alert('Transacción actualizada. Redirigiendo al listado de transacciones...');
-    navigate('/transaction'); // Redirige al listado
+    navigate('/transaction');
   };
 
-  // Si la transacción aún no se ha cargado, muestra un mensaje
   if (!transaction) {
     return <p>Cargando transacción...</p>;
   }
