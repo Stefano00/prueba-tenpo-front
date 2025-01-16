@@ -125,7 +125,7 @@ Una vez levantado, podrás acceder a la aplicación en:
 
 Si no se desea construir la imagen localmente, puedes darle pull a la imagen desde Docker Hub:
  ```bash
-   docker pull stefano00123/prueba-tenpo-fullstack:latest
+   docker pull stefano00123/prueba-tenpo-front:latest
  ```
  
 y luego ejecutar:
