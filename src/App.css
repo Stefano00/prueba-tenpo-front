@@ -1,0 +1,425 @@
+/* Variables de colores */
+:root {
+  --brand-black: #1C1C1C;
+  --brand-green: #02C551;
+  --brand-white: #FFFFFF;
+  --brand-grey: #F5F5F5;
+}
+
+/* Reset y tipografía */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--brand-black) !important;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar .navbar-brand {
+  color: var(--brand-white) !important;
+  font-weight: bold;
+  margin-right: 16px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--brand-green) !important;
+}
+
+/* Contenedor principal */
+.container,
+.transactions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  overflow-x: auto; /* Scroll horizontal si es necesario */
+}
+
+/* Encabezados */
+h1, h2 {
+  color: var(--brand-black);
+  margin-bottom: 16px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  background-color: var(--brand-grey);
+  color: var(--brand-black);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left; /* Alinear contenido a la izquierda */
+  vertical-align: middle;
+}
+
+th {
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: var(--brand-grey); /* Filas alternadas */
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Resaltar fila al pasar el mouse */
+}
+
+/* Estilo para la columna Actions */
+.actions-column {
+  text-align: center;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los botones */
+  align-items: center;
+  gap: 8px; /* Espaciado entre botones */
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--brand-black);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.icon-button:hover {
+  color: var(--brand-green);
+}
+
+.icon-button[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.pagination li {
+  margin: 0 4px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--brand-green);
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Tabla responsiva */
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none; /* Ocultar encabezados en vista móvil */
+  }
+
+  tr {
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--brand-white);
+    padding: 8px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: none;
+  }
+
+  td::before {
+    content: attr(data-label); /* Mostrar título de columna */
+    font-weight: bold;
+    color: var(--brand-black);
+    flex-basis: 40%;
+    text-align: left;
+  }
+
+  td {
+    flex-basis: 60%;
+    text-align: right; /* Datos alineados a la derecha */
+  }
+
+  /* Asegurar alineación correcta de la columna Actions */
+  .actions-column {
+    text-align: center;
+  }
+
+  .actions-column .table-actions {
+    justify-content: center;
+    flex-wrap: nowrap; /* Evitar que los botones se apilen */
+  }
+}
+
+/* Variables de colores de Tenpo */
+:root {
+  --brand-primary: #00a8ff; /* Azul principal */
+  --brand-secondary: #eaf4fe; /* Azul claro */
+  --brand-black: #1c1c1c;
+  --brand-white: #ffffff;
+  --brand-grey: #f5f5f5;
+  --brand-green: #02c551; /* Verde */
+}
+
+/* Reset y tipografía */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+}
+
+/* Estilos del formulario */
+.transaction-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: var(--brand-secondary);
+  border: 1px solid var(--brand-grey);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-form .form-group {
+  margin-bottom: 16px;
+}
+
+.transaction-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.transaction-form .form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid var(--brand-grey);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.transaction-form .form-control:focus {
+  border-color: var(--brand-primary);
+  outline: none;
+  box-shadow: 0 0 4px var(--brand-primary);
+}
+
+/* Botones */
+.transaction-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.transaction-form .button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.transaction-form .button-primary {
+  background-color: var(--brand-primary);
+  color: var(--brand-white);
+}
+
+.transaction-form .button-primary:hover {
+  background-color: #007acc;
+}
+
+.transaction-form .button-secondary {
+  background-color: var(--brand-grey);
+  color: var(--brand-black);
+}
+
+.transaction-form .button-secondary:hover {
+  background-color: var(--brand-primary);
+  color: var(--brand-white);
+}
+
+/* Colores de Tenpo */
+:root {
+  --brand-green: #00A859; /* Verde de Tenpo */
+  --brand-black: #1C1C1C; /* Negro */
+  --brand-white: #FFFFFF; /* Blanco */
+  --brand-grey: #F5F5F5; /* Gris claro */
+}
+
+/* Estilos del formulario */
+.transaction-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: var(--brand-grey);
+  border: 1px solid var(--brand-black);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-form .form-group {
+  margin-bottom: 16px;
+}
+
+.transaction-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.transaction-form .form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid var(--brand-black);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.transaction-form .form-control:focus {
+  border-color: var(--brand-green);
+  outline: none;
+  box-shadow: 0 0 4px var(--brand-green);
+}
+
+/* Botones */
+.transaction-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.transaction-form .button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.transaction-form .button-primary {
+  background-color: var(--brand-green);
+  color: var(--brand-white);
+}
+
+.transaction-form .button-primary:hover {
+  background-color: #007acc;
+}
+
+.transaction-form .button-secondary {
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+}
+
+.transaction-form .button-secondary:hover {
+  background-color: var(--brand-grey);
+  color: var(--brand-black);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--brand-black);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .navbar-brand {
+  color: var(--brand-white);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--brand-green);
+}
+
+.navbar .navbar-logo {
+  height: 40px;
+  margin-right: 16px;
+}
+
+.navbar .menu-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.lner-text-1 {
+  color: var(--white);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-family: Open Sans,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
